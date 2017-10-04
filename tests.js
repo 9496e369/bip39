@@ -281,7 +281,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Bitcoin Testnet";
+            return $(this).html() == "BTC - Bitcoin Testnet";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -311,7 +311,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Litecoin";
+            return $(this).html() == "LTC - Litecoin";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -331,6 +331,36 @@ page.open(url, function(status) {
 });
 },
 
+// Network can be set to ripple
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "rLTFnqbmCVPGx6VfaygdtuKWJgcN4v1zRS";
+    page.evaluate(function() {
+        $(".phrase").val("ill clump only blind unit burden thing track silver cloth review awake useful craft whale all satisfy else trophy sunset walk vanish hope valve");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "XRP - Ripple";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("Ripple address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
 // Network can be set to dogecoin
 function() {
 page.open(url, function(status) {
@@ -341,7 +371,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Dogecoin";
+            return $(this).html() == "DOGE - Dogecoin";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -371,7 +401,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "ShadowCash";
+            return $(this).html() == "SDC - ShadowCash";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -401,7 +431,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "ShadowCash Testnet";
+            return $(this).html() == "SDC - ShadowCash Testnet";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -431,7 +461,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Viacoin";
+            return $(this).html() == "VIA - Viacoin";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -461,7 +491,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Viacoin Testnet";
+            return $(this).html() == "VIA - Viacoin Testnet";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -491,7 +521,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Jumbucks";
+            return $(this).html() == "JBS - Jumbucks";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -521,7 +551,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "CLAM";
+            return $(this).html() == "CLAM - Clams";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -541,6 +571,36 @@ page.open(url, function(status) {
 });
 },
 
+// Network can be set to crown
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "18pWSwSUAQdiwMHUfFZB1fM2xue9X1FqE5";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "CRW - Crown";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("CRW address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
 // Network can be set to dash
 function() {
 page.open(url, function(status) {
@@ -551,7 +611,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "DASH";
+            return $(this).html() == "DASH - Dash";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -571,6 +631,35 @@ page.open(url, function(status) {
 });
 },
 
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "yaR52EN4oojdJfBgzWJTymC4uuCLPT29Gw";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "DASH - Dash Testnet";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("DASH Testnet address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
 // Network can be set to game
 function() {
 page.open(url, function(status) {
@@ -581,7 +670,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "GAME";
+            return $(this).html() == "GAME - GameCredits";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -611,7 +700,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Namecoin";
+            return $(this).html() == "NMC - Namecoin";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -641,7 +730,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Peercoin";
+            return $(this).html() == "PPC - Peercoin";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -672,7 +761,7 @@ page.open(url, function(status) {
         $(".phrase").trigger("input");
         $(".network option[selected]").removeAttr("selected");
         $(".network option").filter(function() {
-            return $(this).html() == "Ethereum";
+            return $(this).html() == "ETH - Ethereum";
         }).prop("selected", true);
         $(".network").trigger("change");
     });
@@ -695,7 +784,7 @@ page.open(url, function(status) {
         // this private key can be imported into
         // https://www.myetherwallet.com/#view-wallet-info
         // and it should correlate to the address above
-        var expected = "8f253078b73d7498302bb78c171b23ce7a8fb511987d2b2702b731638a4a15e7";
+        var expected = "0x8f253078b73d7498302bb78c171b23ce7a8fb511987d2b2702b731638a4a15e7";
         var actual = page.evaluate(function() {
             return $(".privkey:first").text();
         });
@@ -718,6 +807,246 @@ page.open(url, function(status) {
         //    console.log("Actual: " + actual);
         //    fail();
         //}
+        next();
+    });
+});
+},
+
+// Network can be set to Slimcoin
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "SNzPi1CafHFm3WWjRo43aMgiaEEj3ogjww";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "SLM - Slimcoin";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("Slimcoin address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Network can be set to Slimcointn
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "n3nMgWufTek5QQAr6uwMhg5xbzj8xqc4Dq";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "SLM - Slimcoin Testnet";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("Slimcoin testnet address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Network can be set to bitcoin cash
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "1JKvb6wKtsjNoCRxpZ4DGrbniML7z5U16A";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "BCH - Bitcoin Cash";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("Bitcoin Cash address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Network can be set to myriadcoin
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "MJEswvRR46wh9BoiVj9DzKYMBkCramhoBV";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "XMY - Myriadcoin";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("Myriadcoin address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Network can be set to pivx
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "DBxgT7faCuno7jmtKuu6KWCiwqsVPqh1tS";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "PIVX - PIVX";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("PIVX address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Network can be set to pivx testnet
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "yB5U384n6dGkVE3by5y9VdvHHPwPg68fQj";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "PIVX - PIVX Testnet";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("PIVX Testnet address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Network can be set to maza
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "MGW4Bmi2NEm4PxSjgeFwhP9vg18JHoRnfw";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "MAZA - Maza";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("Maza address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Network can be set to fujicoin
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    var expected = "FgiaLpG7C99DyR4WnPxXedRVHXSfKzUDhF";
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "FJC - Fujicoin";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("Fujicoin address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
         next();
     });
 });
@@ -875,70 +1204,6 @@ page.open(url, function(status) {
             fail();
         }
         next();
-    });
-});
-},
-
-// BIP44 purpose field changes address list
-function() {
-page.open(url, function(status) {
-    // set the phrase
-    var expected = "1JbDzRJ2cDT8aat2xwKd6Pb2zzavow5MhF";
-    page.evaluate(function() {
-        $(".phrase").val("abandon abandon ability");
-        $(".phrase").trigger("input");
-    });
-    waitForGenerate(function() {
-        // change the bip44 purpose field to 45
-        page.evaluate(function() {
-            $("#bip44 .purpose").val("45");
-            $("#bip44 .purpose").trigger("input");
-        });
-        waitForGenerate(function() {
-            // check the address for the new derivation path
-            var actual = page.evaluate(function() {
-                return $(".address:first").text();
-            });
-            if (actual != expected) {
-                console.log("BIP44 purpose field generates incorrect address");
-                console.log("Expected: " + expected);
-                console.log("Actual: " + actual);
-                fail();
-            }
-            next();
-        });
-    });
-});
-},
-
-// BIP44 coin field changes address list
-function() {
-page.open(url, function(status) {
-    // set the phrase
-    var expected = "1F6dB2djQYrxoyfZZmfr6D5voH8GkJTghk";
-    page.evaluate(function() {
-        $(".phrase").val("abandon abandon ability");
-        $(".phrase").trigger("input");
-    });
-    waitForGenerate(function() {
-        // change the bip44 purpose field to 45
-        page.evaluate(function() {
-            $("#bip44 .coin").val("1");
-            $("#bip44 .coin").trigger("input");
-        });
-        waitForGenerate(function() {
-            // check the address for the new derivation path
-            var actual = page.evaluate(function() {
-                return $(".address:first").text();
-            });
-            if (actual != expected) {
-                console.log("BIP44 coin field generates incorrect address");
-                console.log("Expected: " + expected);
-                console.log("Actual: " + actual);
-                fail();
-            }
-            next();
-        });
     });
 });
 },
@@ -1895,7 +2160,7 @@ page.open(url, function(status) {
             // 4) switch from bitcoin to litecoin
             page.evaluate(function() {
                 $(".network option").filter(function() {
-                    return $(this).html() == "Litecoin";
+                    return $(this).html() == "LTC - Litecoin";
                 }).prop("selected", true);
                 $(".network").trigger("change");
             });
@@ -1941,7 +2206,7 @@ page.open(url, function(status) {
         // switch from bitcoin to clam
         page.evaluate(function() {
             $(".network option").filter(function() {
-                return $(this).html() == "CLAM";
+                return $(this).html() == "CLAM - Clams";
             }).prop("selected", true);
             $(".network").trigger("change");
         });
@@ -1975,7 +2240,7 @@ page.open(url, function(status) {
         // 4) switch from bitcoin to viacoin
         page.evaluate(function() {
             $(".network option").filter(function() {
-                return $(this).html() == "Viacoin";
+                return $(this).html() == "VIA - Viacoin";
             }).prop("selected", true);
             $(".network").trigger("change");
         });
@@ -2705,7 +2970,7 @@ page.open(url, function(status) {
             events: 1,
             bits: 4,
             words: 0,
-            strength: "extremely weak",
+            strength: "less than a second",
         },
         {
             entropy: "AAAAAAAA",
@@ -2714,7 +2979,7 @@ page.open(url, function(status) {
             events: 8,
             bits: 32,
             words: 3,
-            strength: "extremely weak",
+            strength: "less than a second - Repeats like \"aaa\" are easy to guess",
         },
         {
             entropy: "AAAAAAAA B",
@@ -2723,7 +2988,7 @@ page.open(url, function(status) {
             events: 9,
             bits: 36,
             words: 3,
-            strength: "extremely weak",
+            strength: "less than a second - Repeats like \"aaa\" are easy to guess",
         },
         {
             entropy: "AAAAAAAA BBBBBBBB",
@@ -2732,7 +2997,7 @@ page.open(url, function(status) {
             events: 16,
             bits: 64,
             words: 6,
-            strength: "very weak",
+            strength: "less than a second - Repeats like \"aaa\" are easy to guess",
         },
         {
             entropy: "AAAAAAAA BBBBBBBB CCCCCCCC",
@@ -2741,7 +3006,7 @@ page.open(url, function(status) {
             events: 24,
             bits: 96,
             words: 9,
-            strength: "weak",
+            strength: "less than a second",
         },
         {
             entropy: "AAAAAAAA BBBBBBBB CCCCCCCC DDDDDDDD",
@@ -2750,7 +3015,7 @@ page.open(url, function(status) {
             events: 32,
             bits: 128,
             words: 12,
-            strength: "easily cracked",
+            strength: "2 minutes",
         },
         {
             entropy: "AAAAAAAA BBBBBBBB CCCCCCCC DDDDDDDA",
@@ -2759,7 +3024,7 @@ page.open(url, function(status) {
             events: 32,
             bits: 128,
             words: 12,
-            strength: "strong",
+            strength: "2 days",
         },
         {
             entropy: "AAAAAAAA BBBBBBBB CCCCCCCC DDDDDDDA EEEEEEEE",
@@ -2768,7 +3033,7 @@ page.open(url, function(status) {
             events: 40,
             bits: 160,
             words: 15,
-            strength: "very strong",
+            strength: "3 years",
         },
         {
             entropy: "AAAAAAAA BBBBBBBB CCCCCCCC DDDDDDDA EEEEEEEE FFFFFFFF",
@@ -2777,7 +3042,7 @@ page.open(url, function(status) {
             events: 48,
             bits: 192,
             words: 18,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         {
             entropy: "7d",
@@ -2785,7 +3050,7 @@ page.open(url, function(status) {
             events: 1,
             bits: 5,
             words: 0,
-            strength: "extremely weak",
+            strength: "less than a second",
         },
         {
             entropy: "ac2c3c4c5c6c7c8c9ctcjcqckcad2d3d4d5d6d7d8d9dtdjdqdkdah2h3h4h5h6h7h8h9hthjhqhkhas2s3s4s5s6s7s8s9stsjsqsks",
@@ -2793,7 +3058,7 @@ page.open(url, function(status) {
             events: 52,
             bits: 225,
             words: 21,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         {
             entropy: "ac2c3c4c5c6c7c8c9ctcjcqckcad2d3d4d5d6d7d8d9dtdjdqdkdah2h3h4h5h6h7h8h9hthjhqhkhas2s3s4s5s6s7s8s9stsjsqsks3d",
@@ -2801,7 +3066,7 @@ page.open(url, function(status) {
             events: 53,
             bits: 254,
             words: 21,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         {
             entropy: "ac2c3c4c5c6c7c8c9ctcjcqckcad2d3d4d5d6d7d8d9dtdjdqdkdah2h3h4h5h6h7h8h9hthjhqhkhas2s3s4s5s6s7s8s9stsjsqs3d4d",
@@ -2809,7 +3074,7 @@ page.open(url, function(status) {
             events: 53,
             bits: 254,
             words: 21,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         {
             entropy: "ac2c3c4c5c6c7c8c9ctcjcqckcad2d3d4d5d6d7d8d9dtdjdqdkdah2h3h4h5h6h7h8h9hthjhqhkhas2s3s4s5s6s7s8s9stsjsqs3d4d5d6d",
@@ -2817,7 +3082,7 @@ page.open(url, function(status) {
             events: 53,
             bits: 264,
             words: 24,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         // Next test was throwing uncaught error in zxcvbn
         // Also tests 451 bits, ie Math.log2(52!)*2 = 225.58 * 2
@@ -2827,7 +3092,7 @@ page.open(url, function(status) {
             events: 104,
             bits: 499,
             words: 45,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         // Case insensitivity to duplicate cards
         {
@@ -2836,7 +3101,7 @@ page.open(url, function(status) {
             events: 2,
             bits: 9,
             words: 0,
-            strength: "extremely weak",
+            strength: "less than a second",
         },
         {
             entropy: "ASas",
@@ -2844,7 +3109,7 @@ page.open(url, function(status) {
             events: 2,
             bits: 9,
             words: 0,
-            strength: "extremely weak",
+            strength: "less than a second",
         },
         // Missing cards are detected
         {
@@ -2853,7 +3118,7 @@ page.open(url, function(status) {
             events: 51,
             bits: 221,
             words: 18,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         {
             entropy: "ac2c3c4c5c6c7c8c  tcjcqckcad2d3d4d  6d7d8d9dtdjdqdkdah2h3h4h5h6h7h8h9hthjhqhkhas2s3s4s5s6s7s8s9stsjsqsks",
@@ -2861,7 +3126,7 @@ page.open(url, function(status) {
             events: 50,
             bits: 216,
             words: 18,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         {
             entropy: "ac2c3c4c5c6c7c8c  tcjcqckcad2d3d4d  6d7d8d9dtdjd  kdah2h3h  5h6h7h8h9hthjhqhkhas2s3s4s5s6s7s8s9stsjsqsks",
@@ -2869,7 +3134,7 @@ page.open(url, function(status) {
             events: 48,
             bits: 208,
             words: 18,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         // More than six missing cards does not show message
         {
@@ -2878,7 +3143,7 @@ page.open(url, function(status) {
             events: 45,
             bits: 195,
             words: 18,
-            strength: "extremely strong",
+            strength: "centuries",
         },
         // Multiple decks of cards increases bits per event
         {
@@ -2922,7 +3187,7 @@ page.open(url, function(status) {
             events: 33,
             bits: 184,
             bitsPerEvent: 5.59,
-            strength: 'easily cracked - Repeats like "abcabcabc" are only slightly harder to guess than "abc"',
+            strength: 'less than a second - Repeats like "abcabcabc" are only slightly harder to guess than "abc"',
         },
     ];
     // use entropy
@@ -3243,7 +3508,7 @@ page.open(url, function(status) {
     // check the BIP44 account extended private key
     waitForGenerate(function() {
         var actual = page.evaluate(function() {
-            return $(".account-xprv").val();
+            return $("#bip44 .account-xprv").val();
         });
         if (actual != expected) {
             console.log("BIP44 account extended private key is incorrect");
@@ -3269,7 +3534,7 @@ page.open(url, function(status) {
     // check the BIP44 account extended public key
     waitForGenerate(function() {
         var actual = page.evaluate(function() {
-            return $(".account-xpub").val();
+            return $("#bip44 .account-xpub").val();
         });
         if (actual != expected) {
             console.log("BIP44 account extended public key is incorrect");
@@ -3637,6 +3902,474 @@ page.open(url, function(status) {
             fail();
         }
         next();
+    });
+});
+},
+
+// BIP49 official test vectors
+// https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki#test-vectors
+function() {
+page.open(url, function(status) {
+    // set the phrase and select bitcoin testnet
+    var expected = "2Mww8dCYPUpKHofjgcXcBCEGmniw9CoaiD2";
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "BTC - Bitcoin Testnet";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+        $(".phrase").trigger("input");
+    });
+    // check the first address
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("BIP49 address is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// BIP49 derivation path is shown
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    var expected = "m/49'/0'/0'/0";
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability").trigger("input");
+    });
+    // check the derivation path of the first address
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $("#bip49 .path").val();
+        });
+        if (actual != expected) {
+            console.log("BIP49 derivation path is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// BIP49 extended private key is shown
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    var expected = "xprvA1hukYsW7QfX9CVsaDAKde4eryajKa4DKWb6m9YjSnqkiZHrahFwwTJfEQTwBQ5kptWT5pZMkkusT1oK8dc1efQ8VFfq4SLSPAWd7Cpt423";
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability").trigger("input");
+    });
+    // check the BIP49 extended private key
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".extended-priv-key").val();
+        });
+        if (actual != expected) {
+            console.log("BIP49 extended private key is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// BIP49 extended public key is shown
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    var expected = "xpub6EhGA4QPwnDpMgaLgEhKzn1PR1RDj2n4gjWhZXxM18NjbMd18EaCVFd95gkLARJaBD2rXAYJED2gdkUbGn1KkrSzCKR554AdABUELoainnt";
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability").trigger("input");
+    });
+    // check the BIP49 extended public key
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $(".extended-pub-key").val();
+        });
+        if (actual != expected) {
+            console.log("BIP49 extended public key is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// BIP49 account field changes address list
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    var expected = "381wg1GGN4rP88rNC9v7QWsiww63yLVPsn";
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability").trigger("input");
+    });
+    waitForGenerate(function() {
+        // change the bip49 account field to 1
+        page.evaluate(function() {
+            $("#bip49 .account").val("1");
+            $("#bip49 .account").trigger("input");
+        });
+        waitForGenerate(function() {
+            // check the address for the new derivation path
+            var actual = page.evaluate(function() {
+                return $(".address:first").text();
+            });
+            if (actual != expected) {
+                console.log("BIP49 account field generates incorrect address");
+                console.log("Expected: " + expected);
+                console.log("Actual: " + actual);
+                fail();
+            }
+            next();
+        });
+    });
+});
+},
+
+// BIP49 change field changes address list
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    var expected = "3PEM7MiKed5konBoN66PQhK8r3hjGhy9dT";
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability").trigger("input");
+    });
+    waitForGenerate(function() {
+        // change the bip49 change field to 1
+        page.evaluate(function() {
+            $("#bip49 .change").val("1");
+            $("#bip49 .change").trigger("input");
+        });
+        waitForGenerate(function() {
+            // check the address for the new derivation path
+            var actual = page.evaluate(function() {
+                return $(".address:first").text();
+            });
+            if (actual != expected) {
+                console.log("BIP49 change field generates incorrect address");
+                console.log("Expected: " + expected);
+                console.log("Actual: " + actual);
+                fail();
+            }
+            next();
+        });
+    });
+});
+},
+
+// BIP49 account extendend private key is shown
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    var expected = "xprv9y3uhgQbfQZbj3o98nfgLDwGGuCJjUn7GKArSAZXjKgMjSdYHjQmTyf78s22g6jsGrxXvHB6HJeFyvFSPkuYZajeTGMZVXV6aNLWw2fagCn";
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+    });
+    // check the BIP49 account extended private key
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $("#bip49 .account-xprv").val();
+        });
+        if (actual != expected) {
+            console.log("BIP49 account extended private key is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// BIP49 account extendend public key is shown
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    var expected = "xpub6C3G7BwVVn7twXscEpCghMszpw2o8wVxdY6TEYy9HfDLcExgqGj21myazAiq6HSmW2F1cBiFqJa3D1cqcDpSh8pbZF5x4iqpd4PyJvd3gjB";
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+    });
+    // check the BIP49 account extended public key
+    waitForGenerate(function() {
+        var actual = page.evaluate(function() {
+            return $("#bip49 .account-xpub").val();
+        });
+        if (actual != expected) {
+            console.log("BIP49 account extended public key is incorrect");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Test selecting coin where bip49 is unavailable (eg CLAM)
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+    });
+    waitForGenerate(function() {
+        // select non-bip49 network, ie CLAM network
+        page.evaluate(function() {
+            $(".network option[selected]").removeAttr("selected");
+            $(".network option").filter(function() {
+                return $(this).html() == "CLAM - Clams";
+            }).prop("selected", true);
+            $(".network").trigger("change");
+        });
+        // check the BIP49 error is shown
+        var bip49ErrorShown = page.evaluate(function() {
+            var bip49hidden = $("#bip49 .available").hasClass("hidden");
+            bip49hidden = bip49hidden && !($("#bip49 .unavailable").hasClass("hidden"));
+            return bip49hidden;
+        });
+        if (!bip49ErrorShown) {
+            console.log("BIP49 error not shown for non-bip49 network");
+            fail();
+        }
+        // check there are no addresses shown
+        var addressCount = page.evaluate(function() {
+            return $(".address").length;
+        });
+        if (addressCount != 0) {
+            console.log("BIP49 address count for non-bip49 network is " + addressCount);
+            fail();
+        }
+        // check the derived keys are blank
+        var areBlank = page.evaluate(function() {
+            var prvKeyIsBlank = $(".extended-priv-key").val().length == 0;
+            var pubKeyIsBlank = $(".extended-pub-key").val().length == 0;
+            return prvKeyIsBlank && pubKeyIsBlank;
+        });
+        if (!areBlank) {
+            console.log("BIP49 extended keys for non-bip49 network are not blank ");
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// github issue 43
+// Cleared mnemonic and root key still allows addresses to be generated
+// https://github.com/iancoleman/bip39/issues/43
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    page.evaluate(function() {
+        $("#bip49-tab a").click();
+        $(".phrase").val("abandon abandon ability");
+        $(".phrase").trigger("input");
+    });
+    waitForGenerate(function() {
+        // clear the mnemonic and root key
+        page.evaluate(function() {
+            $(".phrase").val("");
+            $(".phrase").trigger("input");
+            $(".root-key").val("");
+            $(".root-key").trigger("input");
+            $(".more").click();
+        });
+        waitForFeedback(function() {
+            // check there are no addresses shown
+            var addressCount = page.evaluate(function() {
+                return $(".address").length;
+            });
+            if (addressCount != 0) {
+                console.log("Clearing mnemonic should not allow addresses to be generated");
+                fail();
+            }
+            next();
+        });
+    });
+});
+},
+
+// Github issue 95
+// error trying to generate addresses from xpub with hardened derivation
+function() {
+page.open(url, function(status) {
+    // set the phrase
+    page.evaluate(function() {
+        // Use bip32 tab with hardened addresses
+        $(".hardened-addresses").prop("checked", true);
+        $("#bip32-tab a").click();
+        // set xpub for account 0 of bip44 for 'abandon abandon ability'
+        var bip44AccountXpub = "xpub6CzDCPbtLrrn4VpVbyyQLHbdSMpZoHN4iuW64VswCyEpfjM2mJGdaHJ2DyuZwtst96E16VvcERb8BBeJdHSCVmAq9RhtRQg6eAZFrTKCNqf";
+        $("#root-key").val(bip44AccountXpub);
+        $("#root-key").trigger("input");
+    });
+    waitForFeedback(function() {
+        // check the error message shows
+        var expected = "Hardened derivation path is invalid with xpub key";
+        var actual = page.evaluate(function() {
+            return $(".feedback").text();
+        });
+        if (actual != expected) {
+            console.log("xpub key with hardened addresses does not show feedback");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// Litecoin uses xprv by default, and can optionally be set to ltpv
+// github issue 96
+// https://github.com/iancoleman/bip39/issues/96
+// Issue with extended keys on Litecoin
+function() {
+page.open(url, function(status) {
+    // set the phrase and coin
+    page.evaluate(function() {
+        $(".phrase").val("abandon abandon ability");
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "LTC - Litecoin";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+        $(".phrase").trigger("input");
+    });
+    // check the extended key is generated correctly
+    waitForGenerate(function() {
+        var expected = "xprv9s21ZrQH143K2jkGDCeTLgRewT9F2pH5JZs2zDmmjXes34geVnFiuNa8KTvY5WoYvdn4Ag6oYRoB6cXtc43NgJAEqDXf51xPm6fhiMCKwpi";
+        var actual = page.evaluate(function() {
+            return $(".root-key").val();
+        });
+        if (actual != expected) {
+            console.log("Litecoin root key does not default to xprv");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        // set litecoin to use ltub
+        page.evaluate(function() {
+            $(".addresses").empty();
+            $(".litecoin-use-ltub").prop("checked", true);
+            $(".litecoin-use-ltub").trigger("change");
+        });
+        waitForGenerate(function() {
+            var expected = "Ltpv71G8qDifUiNesiPqf6h5V6eQ8ic77oxQiYtawiACjBEx3sTXNR2HGDGnHETYxESjqkMLFBkKhWVq67ey1B2MKQXannUqNy1RZVHbmrEjnEU";
+            var actual = page.evaluate(function() {
+                return $(".root-key").val();
+            });
+            if (actual != expected) {
+                console.log("Litecoin root key cannot be set to use ltub");
+                console.log("Expected: " + expected);
+                console.log("Actual: " + actual);
+                fail();
+            }
+            next();
+        });
+    });
+});
+},
+
+// BIP32 tab can use P2WPKH Nested In P2SH
+// github issue 91 part 2
+// https://github.com/iancoleman/bip39/issues/91
+// generate new addresses from xpub?
+function() {
+page.open(url, function(status) {
+    // set the xpub and coin and select bip32 tab with p2wpkh addresses
+    page.evaluate(function() {
+        // use p2wpkh addresses
+        $(".p2wpkh-nested-in-p2sh").prop("checked", true);
+        // use bip32 tab
+        $("#bip32-tab a").click();
+        // use testnet
+        $(".network option[selected]").removeAttr("selected");
+        $(".network option").filter(function() {
+            return $(this).html() == "BTC - Bitcoin Testnet";
+        }).prop("selected", true);
+        $(".network").trigger("change");
+        // Set root xpub to BIP49 official test vector account 0
+        $(".root-key").val("tpubDD7tXK8KeQ3YY83yWq755fHY2JW8Ha8Q765tknUM5rSvjPcGWfUppDFMpQ1ScziKfW3ZNtZvAD7M3u7bSs7HofjTD3KP3YxPK7X6hwV8Rk2");
+        $(".root-key").trigger("input");
+    });
+    // check the address is generated correctly
+    waitForGenerate(function() {
+        var expected = "2Mww8dCYPUpKHofjgcXcBCEGmniw9CoaiD2";
+        var actual = page.evaluate(function() {
+            return $(".address:first").text();
+        });
+        if (actual != expected) {
+            console.log("BIP32 tab cannot generate P2WPKH Nested In P2SH addresses");
+            console.log("Expected: " + expected);
+            console.log("Actual: " + actual);
+            fail();
+        }
+        next();
+    });
+});
+},
+
+// github issue 99
+// https://github.com/iancoleman/bip39/issues/99#issuecomment-327094159
+// "warn me emphatically when they have detected invalid input" to the entropy field
+// A warning is shown when entropy is filtered and discarded
+function() {
+page.open(url, function(status) {
+    // use entropy
+    page.evaluate(function() {
+        $(".use-entropy").prop("checked", true).trigger("change");
+        $(".entropy").val("00000000 00000000 00000000 00000000").trigger("input");
+    });
+    // check the filter warning does not show
+    waitForGenerate(function() {
+        var warningIsHidden = page.evaluate(function() {
+            return $(".entropy-container .filter-warning").hasClass("hidden");
+        });
+        if (!warningIsHidden) {
+            console.log("Entropy filter warning is showing when it should not");
+            fail();
+        }
+        page.evaluate(function() {
+            $(".entropy").val("10000000 zxcvbn 00000000 00000000 00000000").trigger("input");
+        });
+        // check the filter warning shows
+        waitForEntropyFeedback(function() {
+            var warningIsHidden = page.evaluate(function() {
+                return $(".entropy-container .filter-warning").hasClass("hidden");
+            });
+            if (warningIsHidden) {
+                console.log("Entropy filter warning is not showing when it should");
+                fail();
+            }
+            next();
+        });
     });
 });
 },
